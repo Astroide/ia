@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur de MENACE</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <script>var inIFrame = (window.location !== window.parent.location);</script>
+  <canvas width="500" height="500" id="tictactoe"></canvas>
+  <div id="but">
+<span ondblclick="window.location.reload();" style="user-select: none;">Recharger</span>
+  <button onclick="human();" style="color: red;font-size: 2em;">Jouer</button><div id="taux">Aucune partie jouée par MENACE</div><div id="opp"></div>
+  <button onclick="down();">Télécharger</button>
+  <button onclick="up();">Importer</button>
+  <a download="menace1.menace" id="adw"></a>
+  <input type="file" style="display: none;" id="fin" accept=".menace" onchange="menacer()">
+  </div>
+  <div id="ctrls" style="display: none;">
+    <div id="gps">Calcul en cours...</div>
+    <button onclick="var val = parseInt(prompt('Millisecondes par partie'));TM=(isNaN(val)?TM:val)">V</button>
+    <button onclick="if(!started){game();started = true}">GO</button>
+    <button onclick="STOP_AT = parseInt(prompt('Maximum de parties :'));">MAX</button>
+    <br>
+    <div>
+      <label for="alea">Aléatoire<input type="checkbox" onchange="sp1.on = this.checked" id="alea" checked></label><br>
+      <label for="menace2">MENACE 2<input type="checkbox" onchange="sp2.on = this.checked" id="menace2" checked></label><br>
+      <label for="menace3">MENACE 3<input type="checkbox" onchange="sp3.on = this.checked" id="menace3" checked></label><br>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

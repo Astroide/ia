@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<!-- 23762 -> 9313 -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>...</title>
+	<link href="./style.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="logo.png" type="image/png" />
+  <base target="_blank" />
+</head>
+
+<body>
+	<!-- IMPORTANT!! -->
+	<script>
+		var __truth__ = false;
+		function $(sel){
+  return document.querySelector(sel);
+}
+      var loadImage = {};
+      loadImage.count = 7;
+      loadImage.loaded = 0;
+      function limg(){
+   (++loadImage.loaded == loadImage.count) && ($('.loading').classList.add('loaded')||1) && ($('#main').classList.add('loaded')||1) && ($('#txt').classList.add('loaded')||1);
+   if(loadImage.loaded == loadImage.count){
+     __truth__ = true;
+     setTimeout(function(){$('.half-circle').style.display = 'none';}, 0);
+   }
+}
+	</script>
+	<div class="loading" title="Chargement du contenu...">
+		<div class="half-circle"></div>
+	</div>
+	<this is blinking id="txt">CHARGEMENT...</this>
+	<div id="main">
+    <div id="exemple">EXEMPLE - EXEMPLE - EXEMPLE - EXEMPLE - EXEMPLE - EXEMPLE</div>
+		<div id="def"></div>
+		<div class="timeline">
+			<div id="looong"></div>
+		</div>
+		<canvas id="line"></canvas>
+		<div id="content"></div>
+		<div id="play-stop" onclick="togglePlayState()">
+			<img src="./images/go.svg" id="image_play" onload="limg();"  title="Démarrer" tabindex="2">
+      <img src="./images/pause.svg" id="image_pause" style="display:none;" onload="limg();" title="Pause" tabindex="2">
+      <img src="./images/fini.svg" id="image_next" style="display:none;" onload="limg();" title="Continuer" tabindex="2">
+      </div>
+      <img id="slw" onclick="back();" src="./images/slow.svg" onload="limg();" width="64" height="64" title="Aller vers le passé" tabindex="1">
+      <img id="fst" onclick="fwd();" src="./images/fast.svg" onload="limg();" width="64" height="64" title="Accélérer" tabindex="3">
+      <img src="./images/indic.svg" id="indic" onload="limg();" title="Indicateur de la date actuelle">
+      <div id="date" tabindex="0" title="Date actuelle - cliquer pour aller à une date" onclick="goTo();"><span id="d1">0</span><input id="d2" value="0"style="display: none;" onchange="_submit();" maxlength="4" size="4"></div>
+      <div id="ttl">
+        <div id="foreground"></div>
+        <div id="title"><h1><div id="text-auto"></div><this is blinking>_</this></h1><h4 id="ctc" style="display: none;" onclick="start();">Cliquer <strong>ici</strong> pour continuer</h4></div>
+      </div>
+      <div id="button-zone"></div>
+      <script src="./parser.js"></script>
+      <script src="./script.js"></script>
+    </div>
+  </body>
+</html>   

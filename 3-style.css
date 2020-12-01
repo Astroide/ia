@@ -1,0 +1,33 @@
+@keyframes flip {
+  from {
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+    background-color: red;
+  }
+  50%{
+    background-color: #0ff;
+    transform: perspective(800px) rotateX(360deg) rotateY(90deg);
+  }
+  to{
+    transform: perspective(800px) rotateX(360deg) rotateY(0deg);
+    background-color: red;
+  }
+}
+div {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation: flip 5s linear infinite;
+}
+#d2 {
+  left: 100px;
+}
+#d3 {
+  left: 100px;
+  top: 100px;
+}
+#d4 {
+  top: 100px;
+}

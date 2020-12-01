@@ -1,0 +1,140 @@
+LDT
+L'intelligence artificielle
+Par Olie Auger
+:1961
+<h1>MENACE (<strong>M</strong>atchbox <strong>E</strong>ducable <strong>N</strong>oughts and <strong>C</strong>rosses <strong>E</strong>ngine)</h1>
+<p>
+En 1961, Donald Mitchie créa une intelligence artificielle pouvant jouer au tic-tac-toe. Ne possédant pas d'ordinateur, il utilisa donc 304 boîtes d'allumettes contanant des billes, chacune reliée à une situation possible. La machine commençait. Il prenait donc la boîte correspondant à un plateau vide, l'inclinait, et jouait le coup de MENACE selon la bille obtenue. Il laissait ensuite le tiroit entrouvert. Ensuite, il jouait pour lui-même, puis trouvait la boîte correspondante à la situation actuelle du jeu, puis répétait la première étape. À la fin de la partie, il modifiait le contenu des boîtes.<br>
+<ul>
+  <li>Si il gagnait, il enlevait une la bille utilisée dans chaque boîte ouverte.</li>
+  <li>Si c'était égalité, il rajoutait une bille de la même couleur que la bille utilisée dans chaque boîte ouverte.</li>
+  <li>Si MENACE gagnait, il ajoutait deux billes de la couleur de la bille utilisée dans chaque boîte ouverte.</li>
+</ul>
+Ces opérations renforçaient les bon coups que MENACE jouait et réduisait les chances que les erreurs se reproduisent.
+
+Ci-dessous, une réplique fonctionnelle de MENACE non entraînée jouant contre un joueur aléatoire qui s'améliore en jouant. Pour jouer contre elle, cliquez sur le bouton Jouer et vous prendrez la place du deuxième joueur à la prochaine partie.
+</p>
+<div class="wrap" id="mdiv1"><iframe src="./exemples/menace/index.html" class="scaled-frame"></iframe></div>
+
+:2020
+<h1>Ce projet</h1>
+<p>
+<h2>Sources</h2>
+<a href="https://people.csail.mit.edu/brooks/idocs/matchbox.pdf">Experiments on the mechanization of game learning Part I</a><hr>
+<a href="https://medium.com/@ODSC/how-300-matchboxes-learned-to-play-tic-tac-toe-using-menace-35e0e4c29fc">How 300 Matchboxes Learned to Play Tic-Tac-Toe Using MENACE</a><hr>
+<a href="https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine">Matchbox Educable Noughts and Crosses Engine</a><br>
+<hr>
+<a href="https://cs.stackexchange.com/questions/30778/why-is-the-a-search-heuristic-optimal-even-if-it-underestimates-costs">algorithms - Why is the A\* search heuristic optimal even if it underestimates costs? - Computer Science Stack Exchange</a> (première réponse à la question)<br>
+<hr>
+PICKOVER, Clifford A. *Artificial Intelligence - An Illustrated History, From Medieval Robots to Neural Networks*, New York, Sterling Publishing, 2019, 211 pages.
+<hr>
+MATHIVET, Virginie. *L'intelligence Artificielle pour les développeurs - Concepts et implémentations en Java*, St-Herblain (France), Éditions ENI, 2019, 500 pages.
+<hr>
+LE CUN, Yann. *Quand la machine apprend - La révolution des neurones artificiels et de l'apprentissage profond*, Paris, Odile Jacob, 2019, 400 pages.
+
+<p>
+
+:0
+<h1>Fonctionnement</h1>
+<p>
+Ceci est une ligne du temps sur l'histoire de l'intelligence artificielle. Lorsque vous aurez fini de lire ce texte, cliquez sur le bouton <img src="./images/fini.svg" style="vertical-align: center;" width="16" height="16" pressable onclick="$('#image_next').focus();">.
+</p>
+
+:1
+<p>Cliquer <button onclick="to(1800);speed=0.5;togglePlayState();">ici</button> pour aller à la prochaine date (1800).<p>
+
+:1980
+<h1>Réseaux de neurones artificiels</h1>
+<p>
+Les réseaux de neurones artificiels sont des tentatives de reproduire le fonctionnement du cerveau dans un ordinateur pour créer une intelligence. Cette idéee vient du fait que si l'intelligence peut exister dans le cerveau, elle peut aussi exister dans des répliques de cerveau. Ce sont plusieurs des couches de «neurones» artificiels (si il n'y a qu'une couche, c'est un <button onclick="to(1957)">perceptron</button>). Par contre, la façon d'ajuster les liens entre les neurones est assez complexe. Chaque neurone d'une couche est relié à tous ceux de la couche suivante par des liens. Chacun de ces liens a une force (ou «poids») différente. Ces poids sont ensuite ajustés pour faire apprendre le réseau de neurones selon la différence entre la sortie attendue et la sortie actuelle. Par contre, il faut avoir un ensemble de données assez varié, sinon le réseau de neurones var être «surentraîné» et va apprendre par coeur l'ensemble au lieu d'essayer de trouver des règles générales. <img src="/images/svg_neurones.svg">
+<small>Dans cette image, les cercles bleus sont les neurones et les lignes noires les liens entre eux.</small> La première couche est les entrées et la dernière les sorties.
+</p>
+
+:1960
+<h1>Système experts</h1>
+<p>
+Dans les années 1960, on commença à développer un certain type d'intelligence artificielle : les systèmes experts.
+Ce sont des systèmes (qui n'apprennent pas) constitués de règles basées sur le domaine pour lequel ils sont faits.Ces règles permettent de déduire des comportements. Par exemple, une règle d'un système expert fait pour jouer au tic-tac-toe pour les O pourrait être :
+<code>SI il y a 2 X alignés ET que cette ligne n'est pas déjà bloquée, ALORS jouer au bout de cette ligne (pour bloquer l'adversaire).</code>
+</p>
+
+:1957
+<h1>Perceptron</h1>
+<p>En 1957, Frank Rosenblatt inventa le perceptron, qui est en fait un <button onclick="to(1980);">réseau de neurones</button> à une seule couche. Les pereptrons peuvent être utilisés pour des taches simples. Pour qu'une tâche soit réalisable par un perceptron, il faut que les valeurs qu'on lui donne soient <button onclick="sdef('lsep');">linéairement séparables</button>. Sinon, le perceptron ne pourra pas acccomplir la tâche. Les perceptrons sont plus simples à faire que les réseaux de neurones car lors de l'étape d'ajustement, il n'y a qu'une couche à «remonter» lors de l'ajustement. Les premier perceptrons ont été entraînées à reconnaître des formes simples, avec un succès modéré.
+</p>
+
+:2012
+<h1>Usage des GPU pour l'intelligence artificielle</h1>
+<p>
+En 2012, au concours de reconnaissance d'images ImageNet a été gagné par une équipe menée par Geoffrey Hinton, avec un taux d'erreur de 16% contre en moyenne 25% pour les autres équipes. La diférence ? Ils utilisaient des <button onclick="sdef('gpu');">GPU</button>, plus rapides, et les autres utilisaient des <button onclick="sdef('cpu');">CPU</button> à la place, ce qui a permis à leur intelligence artificielle d'apprendre beaucoup plus. Depuis ce moment, une grande partie des réseaux de neurones fonctionnent sur les GPU. Par contre, malgré leur rapidité, ils sont optimisés pour les graphiques et non pour les réseaux de neurones. Certaines compagnies sont donc en train de développer des puces faites spécialement pour l'IA.
+</p>
+
+:2021
+<h1>Conclusion</h1>
+Malgré toutes les innovations récentes, les cerveaux électroniques restent des milliers de fois moins efficaces que les cerveaux naturels. 
+
+:1942
+<h1>Les trois lois de la robotique d'Isaac Asimov</h1>
+<p>
+<ol>
+<li>Un robot ne doit pas causer de mal à un être humain ou, par son inaction, permettre qu'on fasse mal à un humain.</li>
+<li>Un robot doit obéir aux ordes des humains sauf si cela violerait la première loi.</li>
+<li>Un robot doit protéger sa propre existence sauf si cela entrerait en conflit avec les deux premières lois.</li>
+</ol>
+Plus tard, il en ajouta une quatrième : <ol start="4">
+<li>Un robot ne doit pas causer de mal à l'humanité ou, par son inaction, permettre qu'on cause du mal à l'humanité.</li></ol>
+
+Ces lois donnent donc des règles de base à intégrer dans le fonctionnement de robots intelligents.
+
+Mais comment un robot peut-il savoir qu'à long terme, ses actions feront du mal à un humain, sans voyager dans le temps ?
+</p>
+
+:1955
+<h1>Systèmes de recherche de chemins</h1>
+<p>
+<ul>
+  <li>
+    <h2>Algorithme de Bellman-Ford</h2>
+    Cet algorithme s'étend autour du centre jusqu'à atteindre la destination. Par contre, il recalcule plusieurs fois les distances, ce qui peut être lent.
+  </li>
+  <li>
+    <h2>Algorithme de Dijkstra</h2>
+    Cet algorithme cherche le chemin le plus court entre deux points en faisant une démarche à peu près circulaire jusqu'au point d'arrivée. Lorsqu'il y a des obstacles, il se répand plutôt comme un liquide. Cette approche fait qu'il est très peu efficace dans une grande étendue sans obstacles étant donné qu'il teste inutilement des centaines de cases. Par contre, il est très efficace dans un labyrinthe.
+    Il est une amélioration de l'algorithme de Bellman-Ford car il ne calcule les distances pour chaque point qu'une fois.
+  </li>
+  <li>
+    <h2>Algorithme A\*</h2>
+    Cet algorithme est une version améliorée de l'algorithme de Dijkstra. Au lieu de tester toutes les cases, il utilise un heuristique de distance qui l'aide à se diriger plus rapidement vers l'objectif que vers les autres directions.
+    A\* n'est optimal que si l'heuristique de distance sous-estime les distances. <button onclick="sdef('a\*')">(Explication)</button> A\* est particulièrement rapide dans de grands espaces avec peu d'obstacles, et n'est pas très performant dans un labyrinthe. C'est un des algorithmes les plus utilisés dans les jeux vidéos.
+  </li>
+</ul>
+<h2>Démonstration des algorithmes A\* et de Dijkstra</h2>
+<small>Cliquer sur le symbole <-> en haut dans le coin pour passer de A\* à Dijkstra et vice-versa. Il démarre en A\*. On peut cliquer sur une case pour la marquer comme destination. **Attention : L'algorithme de Dijkstra peut être assez lent.**</small>
+<iframe frameborder="0" scrolling="no" noscrollbars src="//ia.astroide.repl.co/exemples/rdc/index.html" width="400" height="400"></iframe>
+</p>
+
+:1984
+<h1>Voitures autonomes</h1>
+<p>
+Une des applications possible des systèmes de reconnaissance d'objets est les véhicules sans conducteur, ou avec assistance à la conduite. Les passagers n'auraient pas à se préoccuper de la conduite, donnant seulement une destination et la voiture s'occuperait du reste. Par contre, cela cause plusieurs problèmes éthiques. Par exemple, si la voiture transporte quatre personnes et a le choix entre foncer dans une barrière de béton et possiblement tuer ses occupants, ou le contourner et foncer dans un piéton traversant la rue, que devrait-elle faire? 
+
+Une des choses qui pourraient aider au fonctionnement des voitures autonomes serait qu'il y ait plus de voitures autonomes. Comme cela, elles pourraient communiquer entre elles pour éviter de créer des bouchons de circulation ou de se foncer dedans.
+</p>
+
+:1988
+<h1>Paradoxe de Moravec</h1>
+<p>
+Plus la technologie avance, plus les ordinateurs ont de la facilité avec les tâches abstraites, mais on a toujours de la difficulté à leur donner des capacités motrices et sensorielles approchant celles d'un enfant d'un an.
+</p>
+
+:2003
+<h1>Catastrophe de la machine à trombones</h1>
+<p>
+En 2003, le philosophe Nick Bostrom imagina la situation suivante. On construit une usine à trombones, contrôlée par une intelligence artificielle. On lui dit de produire le plus de trombones possible. Si la machine n'est pas assez régulée, elle pourrait utiliser plus de ressources, en commander d'autres lorsqu'il n'y en a plus, et finalement utiliser toutes les ressources de la Terre pour produire des trombones.
+</p>
+
+:1964
+<h1>ELIZA</h1>
+<p>
+ELIZA fut le premier&nbsp;*chatbot*. Elle était faite pour servir de psychologue et posait des questions à son interlocuteur pour l'aider dans ses problèmes, mais ne pouvait pas vraiment relancer la conversation sur un nouveau sujet. Lors de son test, plusieurs personnes crurent que c'était un vrai psychologue humain. (Ils communiquaient via un ordinateur et pensaient probablement que le psychologue était dans une autre pièce). Certains trouvaient qu'ELIZA les aidait, malgré
+</p>

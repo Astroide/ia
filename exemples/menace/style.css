@@ -1,0 +1,39 @@
+#tictactoe {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
+@keyframes size-change {
+  from {
+    transform: scale(0.7,0.7);
+  }
+  50% {
+    transform: scale(1.2,1.2);
+  }
+  to {
+    transform: scale(0.7,0.7);
+  }
+}
+#but {
+  position: absolute;
+  left: 500px;
+  top: 0px;
+}
+button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  border-radius: 0px;
+}
+button:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  border-radius: 0px;
+}
+#ctrls {
+  border: 1px solid red;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}
