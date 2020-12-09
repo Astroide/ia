@@ -27,6 +27,9 @@ div {
 #d3 {
   left: 100px;
   top: 100px;
+  background-image: url(./logo.png) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #d4 {
   top: 100px;

@@ -222,6 +222,7 @@ function circle(x, y, rad){
 const FONT_HEIGHT_20PX = 1.286 * 20, FONT_HEIGHT_25PX = 1.286 * 25;
 var FONT_HEIGHT;
 function drawDates(){
+  debugger;
   ctx.clearAll();
   ctx.fillStyle = "red";
   ctx.fillRect(0,32,canvas.width,6);

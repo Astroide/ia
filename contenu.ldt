@@ -2,7 +2,7 @@ LDT
 L'intelligence artificielle
 Par Olie Auger
 :1961
-<h1>MENACE (<strong>M</strong>atchbox <strong>E</strong>ducable <strong>N</strong>oughts and <strong>C</strong>rosses <strong>E</strong>ngine)</h1>
+<h1>MENACE (**M**atchbox **E**ducable **N**oughts and **C**rosses **E**ngine)</h1>
 <p>
 En 1961, Donald Mitchie créa une intelligence artificielle pouvant jouer au tic-tac-toe. Ne possédant pas d'ordinateur, il utilisa donc 304 boîtes d'allumettes contanant des billes, chacune reliée à une situation possible. La machine commençait. Il prenait donc la boîte correspondant à un plateau vide, l'inclinait, et jouait le coup de MENACE selon la bille obtenue. Il laissait ensuite le tiroit entrouvert. Ensuite, il jouait pour lui-même, puis trouvait la boîte correspondante à la situation actuelle du jeu, puis répétait la première étape. À la fin de la partie, il modifiait le contenu des boîtes.<br>
 <ul>
@@ -19,12 +19,13 @@ Ci-dessous, une réplique fonctionnelle de MENACE non entraînée jouant contre 
 :2020
 <h1>Ce projet</h1>
 <p>
+<h6>Toutes les éléments interactifs ont été créés par Olie Auger.</h6>
 <h2>Sources</h2>
-<a href="https://people.csail.mit.edu/brooks/idocs/matchbox.pdf">Experiments on the mechanization of game learning Part I</a><hr>
-<a href="https://medium.com/@ODSC/how-300-matchboxes-learned-to-play-tic-tac-toe-using-menace-35e0e4c29fc">How 300 Matchboxes Learned to Play Tic-Tac-Toe Using MENACE</a><hr>
-<a href="https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine">Matchbox Educable Noughts and Crosses Engine</a><br>
+[Experiments on the mechanization of game learning Part I|https://people.csail.mit.edu/brooks/idocs/matchbox.pdf]<hr>
+[How 300 Matchboxes Learned to Play Tic-Tac-Toe Using MENACE|https://medium.com/@ODSC/how-300-matchboxes-learned-to-play-tic-tac-toe-using-menace-35e0e4c29fc]<hr>
+[Matchbox Educable Noughts and Crosses Engine|https://en.wikipedia.org/wiki/Matchbox_Educable_Noughts_and_Crosses_Engine]<br>
 <hr>
-<a href="https://cs.stackexchange.com/questions/30778/why-is-the-a-search-heuristic-optimal-even-if-it-underestimates-costs">algorithms - Why is the A\* search heuristic optimal even if it underestimates costs? - Computer Science Stack Exchange</a> (première réponse à la question)<br>
+[algorithms - Why is the A\* search heuristic optimal even if it underestimates costs? - Computer Science Stack Exchange (première réponse à la question)|https://cs.stackexchange.com/questions/30778/why-is-the-a-search-heuristic-optimal-even-if-it-underestimates-costs]<br>
 <hr>
 PICKOVER, Clifford A. *Artificial Intelligence - An Illustrated History, From Medieval Robots to Neural Networks*, New York, Sterling Publishing, 2019, 211 pages.
 <hr>
@@ -40,13 +41,13 @@ LE CUN, Yann. *Quand la machine apprend - La révolution des neurones artificiel
 Ceci est une ligne du temps sur l'histoire de l'intelligence artificielle. Lorsque vous aurez fini de lire ce texte, cliquez sur le bouton <img src="./images/fini.svg" style="vertical-align: center;" width="16" height="16" pressable onclick="$('#image_next').focus();">.
 </p>
 
-:1
+:2
 <p>Cliquer <button onclick="to(1800);speed=0.5;togglePlayState();">ici</button> pour aller à la prochaine date (1800).<p>
 
 :1980
 <h1>Réseaux de neurones artificiels</h1>
 <p>
-Les réseaux de neurones artificiels sont des tentatives de reproduire le fonctionnement du cerveau dans un ordinateur pour créer une intelligence. Cette idéee vient du fait que si l'intelligence peut exister dans le cerveau, elle peut aussi exister dans des répliques de cerveau. Ce sont plusieurs des couches de «neurones» artificiels (si il n'y a qu'une couche, c'est un <button onclick="to(1957)">perceptron</button>). Par contre, la façon d'ajuster les liens entre les neurones est assez complexe. Chaque neurone d'une couche est relié à tous ceux de la couche suivante par des liens. Chacun de ces liens a une force (ou «poids») différente. Ces poids sont ensuite ajustés pour faire apprendre le réseau de neurones selon la différence entre la sortie attendue et la sortie actuelle. Par contre, il faut avoir un ensemble de données assez varié, sinon le réseau de neurones var être «surentraîné» et va apprendre par coeur l'ensemble au lieu d'essayer de trouver des règles générales. <img src="/images/svg_neurones.svg">
+Les réseaux de neurones artificiels sont des tentatives de reproduire le fonctionnement du cerveau dans un ordinateur pour créer une intelligence. Cette idée vient du fait que si l'intelligence peut exister dans le cerveau, elle peut aussi exister dans des répliques de cerveau. Ce sont plusieurs couches de «neurones» artificiels (si il n'y a qu'une couche, c'est un <button onclick="to(1957)">perceptron</button>). La façon d'ajuster les liens entre les neurones est assez complexe. Chaque neurone d'une couche est relié à tous ceux de la couche suivante par des liens. Chacun de ces liens a une force (ou «poids») différente. Ces poids sont ensuite ajustés pour faire apprendre le réseau de neurones selon la différence entre la sortie attendue et la sortie actuelle.  Par contre, il faut avoir un ensemble de données assez varié, sinon le réseau de neurones var être «surentraîné» et va apprendre par coeur l'ensemble au lieu d'essayer de trouver des règles générales. <img src="/images/svg_neurones.svg">
 <small>Dans cette image, les cercles bleus sont les neurones et les lignes noires les liens entre eux.</small> La première couche est les entrées et la dernière les sorties.
 </p>
 
@@ -66,7 +67,7 @@ Ce sont des systèmes (qui n'apprennent pas) constitués de règles basées sur 
 :2012
 <h1>Usage des GPU pour l'intelligence artificielle</h1>
 <p>
-En 2012, au concours de reconnaissance d'images ImageNet a été gagné par une équipe menée par Geoffrey Hinton, avec un taux d'erreur de 16% contre en moyenne 25% pour les autres équipes. La diférence ? Ils utilisaient des <button onclick="sdef('gpu');">GPU</button>, plus rapides, et les autres utilisaient des <button onclick="sdef('cpu');">CPU</button> à la place, ce qui a permis à leur intelligence artificielle d'apprendre beaucoup plus. Depuis ce moment, une grande partie des réseaux de neurones fonctionnent sur les GPU. Par contre, malgré leur rapidité, ils sont optimisés pour les graphiques et non pour les réseaux de neurones. Certaines compagnies sont donc en train de développer des puces faites spécialement pour l'IA.
+En 2012, au concours de reconnaissance d'images ImageNet a été gagné par une équipe menée par Geoffrey Hinton, avec un taux d'erreur de 16% contre en moyenne 25% pour les autres équipes. La diférence ? Ils utilisaient des <button onclick="sdef('gpu');">GPU</button>, plus rapides, et les autres utilisaient des <button onclick="sdef('cpu');">CPU</button> à la place, ce qui a permis à leur intelligence artificielle d'apprendre beaucoup plus. Depuis ce moment, une grande partie des réseaux de neurones fonctionnent sur les GPU. Par contre, malgré leur rapidité, ils sont optimisés pour les graphiques et non pour les réseaux de neurones. Certaines compagnies sont donc en train de développer des puces faites spécialement pour l'%IA(Intelligence artificielle).
 </p>
 
 :2021
@@ -86,7 +87,7 @@ Plus tard, il en ajouta une quatrième : <ol start="4">
 
 Ces lois donnent donc des règles de base à intégrer dans le fonctionnement de robots intelligents.
 
-Mais comment un robot peut-il savoir qu'à long terme, ses actions feront du mal à un humain, sans voyager dans le temps ?
+Par contre, elles peuvent être difficiles à mettre en place. Par exemple, comment un robot peut-il détecter qu'à long terme, ses actions feront du mal à un humain ?
 </p>
 
 :1955
@@ -123,18 +124,57 @@ Une des choses qui pourraient aider au fonctionnement des voitures autonomes ser
 
 :1988
 <h1>Paradoxe de Moravec</h1>
-<p>
-Plus la technologie avance, plus les ordinateurs ont de la facilité avec les tâches abstraites, mais on a toujours de la difficulté à leur donner des capacités motrices et sensorielles approchant celles d'un enfant d'un an.
+<p>Les ordinateurs ont de la difficulté avec ce que les humains font facilement, et ont de la facilité avec ce qui est difficile mentalement pour un humain.
+/* Les ordinateurs ont de la facilité avec les tâches abstraites, mais on a toujours de la difficulté à leur donner des capacités motrices et sensorielles approchant celles d'un enfant d'un an. */ C'est le paradoxe de Moravec, formulé par Hans Moravec en 1988.
 </p>
 
 :2003
 <h1>Catastrophe de la machine à trombones</h1>
 <p>
 En 2003, le philosophe Nick Bostrom imagina la situation suivante. On construit une usine à trombones, contrôlée par une intelligence artificielle. On lui dit de produire le plus de trombones possible. Si la machine n'est pas assez régulée, elle pourrait utiliser plus de ressources, en commander d'autres lorsqu'il n'y en a plus, et finalement utiliser toutes les ressources de la Terre pour produire des trombones.
+Cette situation montre qu'il faut limiter les ressources auxquelles une %IA(Intelligence artificielle) peut avoir accès si on veut éviter une catastrophe.
 </p>
 
 :1964
 <h1>ELIZA</h1>
 <p>
-ELIZA fut le premier&nbsp;*chatbot*. Elle était faite pour servir de psychologue et posait des questions à son interlocuteur pour l'aider dans ses problèmes, mais ne pouvait pas vraiment relancer la conversation sur un nouveau sujet. Lors de son test, plusieurs personnes crurent que c'était un vrai psychologue humain. (Ils communiquaient via un ordinateur et pensaient probablement que le psychologue était dans une autre pièce). Certains trouvaient qu'ELIZA les aidait, malgré
+ELIZA fut le premier&nbsp;*chatbot*. Elle était faite pour servir de psychologue et posait des questions à son interlocuteur pour l'aider dans ses problèmes, mais ne pouvait pas vraiment relancer la conversation sur un nouveau sujet. Lors de son test, plusieurs personnes crurent que c'était un vrai psychologue humain. (Ils communiquaient via un ordinateur et pensaient probablement que le psychologue était dans une autre pièce). Certains trouvaient qu'ELIZA les aidait, malgré le fait qu'ils sachent que c'était un programme.
+</p>
+
+:1965
+<h1>Logique floue</h1>
+<p>
+La logique booléenne généralement utilisée par les ordinateurs a seulement deux états : 1 ou 0. Mais, dans beaucoup de situations, il peut y avoir des états entre. La logique floue est faite pour résoudre ce problème. Par exemple, un système de mesure de température pourrait indiquer la température sous la forme de «chaude» ou «froide». Mais la température peut être aussi «tiède» ou «légèrement chaude». La logique floue peut être utile lors de l'interprétation du langage humain, qui utilise souvent des notions assez relatives (comme «longtemps»).
+</p>
+
+:1975
+<h1>Algorithmes génétiques</h1>
+<p>
+Les algorithmes génétiques permettent de trouver des solutions sans avoir à les programmer. En fait, le fonctionnement est simple : Plusieurs versions du même programmes sont générées, et on les teste. On garde les meilleures et on les croise ensemble, et on reproduit ces étapes. Cela reproduit l'évolution naturelle. Les algorithmes génétiques peuvent être utiles pour trouver, par exemple, quelle est la meilleur valeur pour un certain paramètre.
+</p>
+
+:1951
+<h1>Apprentissage par renforcement</h1>
+<p>
+L'apprentissage par renforcement est très souvent utilisé dans l'intelligence artificielle. Son principe est extrêmement simple : Lorsque l'intelligence artificielle réussit quelque chose, on renforce les mécanismes ayant mené à cela. Cette approche est très utilisée dans les <button onclick="to(1980);">réseaux de neurones</button>.
+</p>
+
+:1976
+<h1>Éthique de l'intelligence artificielle</h1>
+<p>
+L'intelligence artificielle suscite de nombereux problèmes éthiques. Par exemple, une voiture autonome devrait-elle foncer dans une barrière et possiblement tuer ses passagers ou foncer dans un piéton traversant la rue ? 
+</p>
+
+:1980
+<h1>Expérience de la «chambre chinoise»</h1>
+<p>
+Imaginez que vous êtes dans une pièce fermée, avec seulement une fente dans un des murs. De la fente sort une feuille couverte de caractères inconnus. Vous avez avec vous des instructions vous expliquant avec quels caractères répondre. Pour les personnes à l'extérieur de la pièce, vous aurez l'air de parler parfaitement cette langue, même si vous ne comprenez rien des caractères qui vous été envoyés par la feuille ni de ceux de votre réponse. Cette expérience montre que quelque chose peut ne pas avoir conscience de ce qu'elle fait, et pourtant en donner l'impression.
+</p>
+
+:1
+<h1>Introduction</h1>
+<p>
+/* En cours... */
+/* Qu'est-ce que l'intelligence ? -> */ L'intelligence, c'est l'habileté de comprendre et d'apprendre.
+Donc, une intelligence&nsbp;*artificielle* doit pouvoir apprendre. Le but général des projets d'intelligence artificielle est de créer une %IA(Intelligence artificielle) capable d'atteindre ou de dépasser la compétence humaine dans un certain domaine. Cette ligne du temps présente quelques ({&&}) éléments de l'histoire de l'intelligence artificielle.
 </p>

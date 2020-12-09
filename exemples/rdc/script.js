@@ -348,10 +348,6 @@ addEventListener('keydown', function(e){
   }
 });
 canvas.addEventListener('click', function(zzz){
-  /* var _x = parseInt(zzz.offsetX/20);
-  var _y = parseInt(zzz.offsetY/20);
-  grid[_x][_y].W = !grid[_x][_y].W;
-  ct = true;*/
   var bx = playerX, by = playerY;
   playerX = parseInt(zzz.offsetX/20);
   playerY = parseInt(zzz.offsetY/20);
